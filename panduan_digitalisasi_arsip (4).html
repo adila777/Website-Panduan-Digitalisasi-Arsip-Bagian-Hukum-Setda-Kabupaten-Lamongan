@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Digitalisasi Arsip - Bagian Hukum Setda Kab. Lamongan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .steps ol {
+            margin-left: 20px;
+        }
+
+        .steps li {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Panduan Digitalisasi Arsip Berbasis QR Code</h1>
+            <p>Bagian Hukum Sekretariat Daerah Kabupaten Lamongan</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('beranda')">🏠 Beranda</a></li>
+                <li><a href="#" onclick="showSection('prosedur')">📋 Prosedur Penggunaan</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- Section Beranda -->
+            <div id="beranda" class="section active">
+                <h2>🏠 Beranda</h2>
+                
+                <h3>📖 Pendahuluan</h3>
+                <p>Sistem Digitalisasi Arsip berbasis QR Code merupakan inovasi dalam pengelolaan dokumen hukum di lingkungan Sekretariat Daerah Kabupaten Lamongan. Sistem ini dirancang untuk memudahkan penyimpanan, pencarian, dan akses terhadap dokumen-dokumen penting secara digital dengan memanfaatkan teknologi QR Code yang terintegrasi dengan Google Drive.</p>
+                
+                <div class="card">
+                    <h4>💡 Mengapa Digitalisasi Arsip?</h4>
+                    <p>Digitalisasi arsip membantu menghemat ruang penyimpanan fisik, mempercepat pencarian dokumen, meningkatkan keamanan data, dan memudahkan akses informasi kapan saja dan dimana saja.</p>
+                </div>
+
+                <h3>🎯 Tujuan</h3>
+                <div class="steps">
+                    <ul>
+                        <li><strong>Efisiensi Pengelolaan Dokumen:</strong> Mempermudah proses penyimpanan, pencarian, dan pengambilan dokumen arsip</li>
+                        <li><strong>Keamanan Data:</strong> Meningkatkan keamanan dokumen dengan penyimpanan berbasis cloud yang terenkripsi</li>
+                        <li><strong>Kemudahan Akses:</strong> Memungkinkan akses cepat ke dokumen melalui pemindaian QR Code menggunakan smartphone</li>
+                        <li><strong>Penghematan Biaya:</strong> Mengurangi penggunaan kertas dan ruang penyimpanan fisik</li>
+                        <li><strong>Transparansi:</strong> Meningkatkan transparansi dalam pengelolaan dokumen hukum</li>
+                        <li><strong>Kesiapan Audit:</strong> Memudahkan proses audit dan penelusuran dokumen</li>
+                    </ul>
+                </div>
+
+                <h3>🔍 Gambaran Umum Sistem</h3>
+                
+                <div class="card">
+                    <h4>🗂️ Komponen Sistem</h4>
+                    <p><strong>1. Google Drive:</strong> Platform penyimpanan cloud untuk menyimpan semua dokumen arsip secara digital</p>
+                    <p><strong>2. QR Code:</strong> Kode batang dua dimensi yang menyimpan link akses ke dokumen di Google Drive</p>
+                    <p><strong>3. Smartphone:</strong> Perangkat untuk memindai QR Code menggunakan kamera atau aplikasi pemindai</p>
+                </div>
+
+                <h3>⚙️ Cara Kerja Sistem</h3>
+                <div class="steps">
+                    <ol>
+                        <li><strong>Upload Dokumen:</strong> Dokumen diunggah ke Google Drive dan diatur dalam folder sesuai kategori</li>
+                        <li><strong>Generate QR Code:</strong> Setiap dokumen dibuat QR Code yang berisi link akses ke file tersebut</li>
+                        <li><strong>Cetak QR Code:</strong> QR Code dicetak dan ditempelkan pada dokumen fisik atau lokasi penyimpanan</li>
+                        <li><strong>Scan untuk Akses:</strong> Pengguna memindai QR Code dengan smartphone untuk langsung mengakses dokumen digital</li>
+                    </ol>
+                </div>
+
+                <div class="highlight">
+                    <strong>⚠️ Catatan Penting:</strong> Pastikan dokumen yang diupload sudah dalam format PDF atau gambar yang jelas. Jaga kerahasiaan link dan QR Code untuk dokumen yang bersifat rahasia.
+                </div>
+            </div>
+
+            <!-- Section Prosedur -->
+            <div id="prosedur" class="section">
+                <h2>📋 Prosedur Penggunaan</h2>
+                
+                <h3>📤 Cara Input Data (Upload Dokumen)</h3>
+                
+                <div class="card">
+                    <h4>Langkah 1: Persiapan Dokumen</h4>
+                    <p>Pastikan dokumen sudah dalam format digital (PDF, JPG, PNG) dengan kualitas yang baik dan dapat dibaca dengan jelas.</p>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah 2: Upload ke Google Drive</h4>
+                    <ol>
+                        <li>Buka <strong>Google Drive</strong> melalui browser atau aplikasi mobile</li>
+                        <li>Login menggunakan akun Google resmi Bagian Hukum Setda Kabupaten Lamongan</li>
+                        <li>Pilih atau buat folder sesuai kategori dokumen (contoh: "Perda 2024", "SK Bupati", "Perjanjian Kerjasama", dll)</li>
+                        <li>Klik tombol <strong>"+ Baru"</strong> atau <strong>"New"</strong></li>
+                        <li>Pilih <strong>"Upload File"</strong> atau <strong>"File Upload"</strong></li>
+                        <li>Pilih file dokumen yang akan diupload dari komputer Anda</li>
+                        <li>Tunggu hingga proses upload selesai</li>
+                        <li>Beri nama file yang jelas dan informatif (contoh: "Perda_No5_2024_Tentang_APBD.pdf")</li>
+                    </ol>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah 3: Atur Izin Akses</h4>
+                    <ol>
+                        <li>Klik kanan pada file yang telah diupload</li>
+                        <li>Pilih <strong>"Bagikan"</strong> atau <strong>"Share"</strong></li>
+                        <li>Pada bagian "Siapa saja yang memiliki link" pilih salah satu:
+                            <ul>
+                                <li><strong>"Dibatasi"</strong> - Hanya orang tertentu yang bisa akses (untuk dokumen rahasia)</li>
+                                <li><strong>"Siapa saja yang memiliki link"</strong> - Semua orang dengan link bisa akses (untuk dokumen publik)</li>
+                            </ul>
+                        </li>
+                        <li>Atur level akses: <strong>"Viewer"</strong> (hanya baca) atau <strong>"Editor"</strong> (bisa edit)</li>
+                        <li>Klik <strong>"Salin link"</strong> atau <strong>"Copy link"</strong></li>
+                        <li>Simpan link ini untuk pembuatan QR Code</li>
+                    </ol>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah 4: Buat QR Code</h4>
+                    <ol>
+                        <li>Buka website generator QR Code (contoh: qr-code-generator.com, qrcode-monkey.com, atau qr.io)</li>
+                        <li>Pilih tipe <strong>"URL"</strong> atau <strong>"Link"</strong></li>
+                        <li>Paste link Google Drive yang telah disalin ke kolom yang tersedia</li>
+                        <li>Atur ukuran QR Code sesuai kebutuhan (minimal 3x3 cm untuk hasil cetak yang baik)</li>
+                        <li>Klik <strong>"Generate"</strong> atau <strong>"Create QR Code"</strong></li>
+                        <li>Download QR Code dalam format PNG atau SVG</li>
+                        <li>Simpan file QR Code dengan nama yang sesuai dengan dokumen</li>
+                    </ol>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah 5: Cetak dan Tempel QR Code</h4>
+                    <ol>
+                        <li>Cetak QR Code menggunakan printer dengan kualitas baik</li>
+                        <li>Gunakan kertas sticker atau laminating agar QR Code tahan lama</li>
+                        <li>Tempelkan QR Code pada:
+                            <ul>
+                                <li>Cover dokumen fisik</li>
+                                <li>Box/folder penyimpanan dokumen</li>
+                                <li>Buku register atau katalog arsip</li>
+                            </ul>
+                        </li>
+                        <li>Pastikan QR Code ditempel pada permukaan yang rata dan bersih</li>
+                    </ol>
+                </div>
+
+                <div class="highlight">
+                    <strong>💡 Tips Input Data:</strong>
+                    <ul>
+                        <li>Buat struktur folder yang terorganisir di Google Drive</li>
+                        <li>Gunakan penamaan file yang konsisten dan mudah dicari</li>
+                        <li>Backup QR Code yang sudah dibuat dalam folder khusus</li>
+                        <li>Buat log/catatan untuk tracking dokumen yang sudah didigitalisasi</li>
+                    </ul>
+                </div>
+
+                <h3>🔍 Cara Akses Dokumen (Scan QR Code)</h3>
+
+                <div class="card">
+                    <h4>Metode 1: Menggunakan Kamera Smartphone (iPhone/Android Terbaru)</h4>
+                    <p>Smartphone modern sudah memiliki fitur scan QR Code bawaan di aplikasi kamera.</p>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah-langkah Scan dengan Kamera Bawaan:</h4>
+                    <ol>
+                        <li>Buka aplikasi <strong>Kamera</strong> di smartphone Anda</li>
+                        <li>Arahkan kamera ke QR Code dengan jarak sekitar 10-20 cm</li>
+                        <li>Pastikan QR Code terlihat jelas dalam frame kamera</li>
+                        <li>Tunggu beberapa detik hingga muncul notifikasi atau pop-up di layar</li>
+                        <li>Tap/ketuk notifikasi tersebut untuk membuka link</li>
+                        <li>Browser akan terbuka dan mengarahkan Anda ke dokumen di Google Drive</li>
+                        <li>Login dengan akun Google jika diminta (untuk dokumen dengan akses terbatas)</li>
+                        <li>Dokumen dapat dilihat, didownload, atau dibagikan sesuai izin yang diberikan</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h4>Metode 2: Menggunakan Aplikasi QR Scanner</h4>
+                    <p>Untuk smartphone yang tidak memiliki fitur scan bawaan, gunakan aplikasi scanner QR Code.</p>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah-langkah Scan dengan Aplikasi:</h4>
+                    <ol>
+                        <li>Download aplikasi QR Scanner dari:
+                            <ul>
+                                <li><strong>Android:</strong> Google Play Store (contoh: "QR Scanner", "QR Code Reader")</li>
+                                <li><strong>iPhone:</strong> App Store (contoh: "QR Reader", "Quick Scan")</li>
+                            </ul>
+                        </li>
+                        <li>Install dan buka aplikasi QR Scanner</li>
+                        <li>Berikan izin akses kamera jika diminta</li>
+                        <li>Arahkan kamera ke QR Code</li>
+                        <li>Aplikasi akan otomatis mendeteksi dan menampilkan link</li>
+                        <li>Tap tombol <strong>"Open"</strong> atau <strong>"Buka Link"</strong></li>
+                        <li>Dokumen akan terbuka di browser atau aplikasi Google Drive</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h4>Metode 3: Menggunakan Google Lens (Rekomendasi)</h4>
+                    <p>Google Lens dapat scan QR Code dan langsung terintegrasi dengan Google Drive.</p>
+                </div>
+
+                <div class="steps">
+                    <h4>Langkah-langkah Scan dengan Google Lens:</h4>
+                    <ol>
+                        <li>Buka aplikasi <strong>Google</strong> atau <strong>Google Photos</strong></li>
+                        <li>Tap ikon <strong>Google Lens</strong> (ikon kamera kecil)</li>
+                        <li>Arahkan kamera ke QR Code</li>
+                        <li>Google Lens akan otomatis mendeteksi dan menampilkan pratinjau</li>
+                        <li>Tap hasil scan untuk membuka dokumen</li>
+                        <li>Login Google Drive jika diperlukan</li>
+                    </ol>
+                </div>
+
+                <h3>📱 Fitur Tambahan Setelah Akses Dokumen</h3>
+                <div class="steps">
+                    <ul>
+                        <li><strong>View/Lihat:</strong> Membaca dokumen langsung di browser atau aplikasi</li>
+                        <li><strong>Download:</strong> Mengunduh dokumen ke perangkat untuk akses offline</li>
+                        <li><strong>Share:</strong> Membagikan dokumen ke rekan kerja via email, WhatsApp, dll</li>
+                        <li><strong>Print:</strong> Mencetak dokumen langsung dari Google Drive</li>
+                        <li><strong>Add to My Drive:</strong> Menambahkan shortcut dokumen ke Google Drive pribadi</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <strong>⚠️ Troubleshooting Akses:</strong>
+                    <ul>
+                        <li><strong>QR Code tidak terbaca:</strong> Pastikan QR Code tidak rusak, bersih, dan pencahayaan cukup</li>
+                        <li><strong>Link tidak bisa dibuka:</strong> Periksa koneksi internet Anda</li>
+                        <li><strong>Akses ditolak:</strong> Hubungi admin untuk meminta izin akses dokumen</li>
+                        <li><strong>Dokumen tidak ditemukan:</strong> QR Code mungkin rusak atau link sudah tidak valid</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🔐 Keamanan dan Etika Penggunaan</h4>
+                    <ul>
+                        <li>Jangan membagikan QR Code atau link dokumen rahasia ke pihak yang tidak berwenang</li>
+                        <li>Gunakan akun Google resmi instansi untuk mengakses dokumen</li>
+                        <li>Laporkan jika menemukan QR Code atau dokumen yang rusak</li>
+                        <li>Jaga kerahasiaan informasi yang terdapat dalam dokumen</li>
+                        <li>Logout dari akun Google setelah mengakses dokumen di perangkat umum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>Bagian Hukum Sekretariat Daerah Kabupaten Lamongan</h3>
+            <p>📍 Jl. Basuki Rahmat No. 1, Lamongan, Jawa Timur</p>
+            <p>📞 Telp: (0322) 311234 | 📧 Email: hukum@lamongankab.go.id</p>
+            <p>🌐 Website: www.lamongankab.go.id</p>
+            <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+            <p style="font-size: 0.9em; color: #888;">© 2025 Bagian Hukum Setda Kabupaten Lamongan. Sistem Digitalisasi Arsip Berbasis QR Code.</p>
+            <p style="font-size: 0.85em; color: #999; margin-top: 10px;">Untuk bantuan teknis atau pertanyaan, silakan hubungi administrator sistem.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Tampilkan section yang dipilih
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Scroll ke atas
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Set section beranda sebagai default saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('beranda');
+        });
+    </script>
+</body>
+</html>
